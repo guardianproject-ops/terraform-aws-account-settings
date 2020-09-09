@@ -30,8 +30,8 @@ variable "minimum_password_length" {
 
 variable "password_reuse_prevention" {
   description = "The number of previous passwords that users are prevented from reusing"
-  default     = true
-  type        = bool
+  default     = 5
+  type        = number
 }
 
 variable "require_lowercase_characters" {
@@ -58,7 +58,7 @@ variable "require_symbols" {
   type        = bool
 }
 
-variable "cloudtrail_bucket_id" {
+variable "cloudtrail_bucket_name" {
   description = "S3 bucket name for cloudtrail logs"
   type        = string
 }

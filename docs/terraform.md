@@ -11,7 +11,7 @@
 | additional\_tag\_map | Additional tags for appending to tags\_as\_list\_of\_maps. Not added to `tags`. | `map(string)` | `{}` | no |
 | allow\_users\_to\_change\_password | Whether to allow users to change their own password | `bool` | `true` | no |
 | attributes | Additional attributes (e.g. `1`) | `list(string)` | `[]` | no |
-| cloudtrail\_bucket\_id | S3 bucket name for cloudtrail logs | `string` | n/a | yes |
+| cloudtrail\_bucket\_name | S3 bucket name for cloudtrail logs | `string` | n/a | yes |
 | cloudtrail\_enabled | Specifies whether to create the mutlri-region cloudtrail | `bool` | `true` | no |
 | context | Single object for setting entire context at once.<br>See description of individual variables for details.<br>Leave string and numeric variables as `null` to use default value.<br>Individual variable settings (non-null) override settings in context object,<br>except for attributes, tags, and additional\_tag\_map, which are merged. | <pre>object({<br>    enabled             = bool<br>    namespace           = string<br>    environment         = string<br>    stage               = string<br>    name                = string<br>    delimiter           = string<br>    attributes          = list(string)<br>    tags                = map(string)<br>    additional_tag_map  = map(string)<br>    regex_replace_chars = string<br>    label_order         = list(string)<br>    id_length_limit     = number<br>  })</pre> | <pre>{<br>  "additional_tag_map": {},<br>  "attributes": [],<br>  "delimiter": null,<br>  "enabled": true,<br>  "environment": null,<br>  "id_length_limit": null,<br>  "label_order": [],<br>  "name": null,<br>  "namespace": null,<br>  "regex_replace_chars": null,<br>  "stage": null,<br>  "tags": {}<br>}</pre> | no |
 | delimiter | Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes`.<br>Defaults to `-` (hyphen). Set to `""` to use no delimiter at all. | `string` | n/a | yes |
@@ -26,7 +26,7 @@
 | name | Solution name, e.g. 'app' or 'jenkins' | `string` | n/a | yes |
 | namespace | Namespace, which could be your organization name or abbreviation, e.g. 'eg' or 'cp' | `string` | n/a | yes |
 | password\_policy\_enabled | Whether or not to create the IAM account password policy | `bool` | `true` | no |
-| password\_reuse\_prevention | The number of previous passwords that users are prevented from reusing | `bool` | `true` | no |
+| password\_reuse\_prevention | The number of previous passwords that users are prevented from reusing | `number` | `5` | no |
 | regex\_replace\_chars | Regex to replace chars with empty string in `namespace`, `environment`, `stage` and `name`.<br>If not set, `"/[^a-zA-Z0-9-]/"` is used to remove all characters other than hyphens, letters and digits. | `string` | n/a | yes |
 | require\_lowercase\_characters | Whether to require lowercase characters for user passwords | `bool` | `true` | no |
 | require\_numbers | Whether to require numbers for user passwords | `bool` | `true` | no |
