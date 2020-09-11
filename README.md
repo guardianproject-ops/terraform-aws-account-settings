@@ -78,17 +78,15 @@ This module:
 
 
 **IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
-Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://gitlab.com/guardianproject-ops/terraform-aws-account-settings/releases).
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://gitlab.com/guardianproject-ops/terraform-aws-account-settings/-/tags).
 
 
-
-The tag below is not up to date. Check the repo for the latest version.
 
 It is recommended that the s3 bucket be created in a separate audit account.
 
 ```hcl
 module "account_settings" {
-  source  = "git::https://gitlab.com/guardianproject-ops/terraform-aws-account-settings?ref=tags/0.1.0"
+  source  = "git::https://gitlab.com/guardianproject-ops/terraform-aws-account-settings?ref=master"
   context = module.this.context
   cloudtrail_s3_bucket_name = module.cloudtrail_s3_bucket.bucket_id
 }
