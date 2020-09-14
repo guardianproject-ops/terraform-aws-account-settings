@@ -37,14 +37,3 @@ module "cloudtrail" {
   enable_logging                = true
   s3_bucket_name                = var.cloudtrail_bucket_name
 }
-
-module "log_storage" {
-  source = "git::https://github.com/cloudposse/terraform-aws-s3-log-storage.git?ref=tags/0.14.0"
-
-  context                  = module.this.context
-  acl                      = "log-delivery-write"
-  attributes               = concat(module.this.attributes, ["logstorage"])
-  standard_transition_days = 30
-  glacier_transition_days  = 60
-  expiration_days          = var.log_expiration_days
-}

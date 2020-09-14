@@ -20,7 +20,6 @@
 | hard\_expiry | Whether users are prevented from setting a new password after their password has expired (i.e. require administrator reset) | `bool` | `false` | no |
 | id\_length\_limit | Limit `id` to this many characters.<br>Set to `0` for unlimited length.<br>Set to `null` for default, which is `0`.<br>Does not affect `id_full`. | `number` | n/a | yes |
 | label\_order | The naming order of the id output and Name tag.<br>Defaults to ["namespace", "environment", "stage", "name", "attributes"].<br>You can omit any of the 5 elements, but at least one must be present. | `list(string)` | n/a | yes |
-| log\_expiration\_days | Number of days after which to expunge the objects from the log bucket | `number` | `90` | no |
 | max\_password\_age | The number of days that a user's password is valid | `number` | `0` | no |
 | minimum\_password\_length | Minimum length to require for user passwords | `number` | `8` | no |
 | name | Solution name, e.g. 'app' or 'jenkins' | `string` | n/a | yes |
@@ -41,7 +40,6 @@
 |------|-------------|
 | account\_alias | IAM account alias |
 | cloudtrail | n/a |
-| log\_bucket | n/a |
 | minimum\_password\_length | IAM account minimum password length |
 | signin\_url | IAM users sign-in URL |
 

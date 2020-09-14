@@ -13,10 +13,6 @@ output "signin_url" {
   value       = "https://${local.account_alias}.signin.aws.amazon.com/console"
 }
 
-output "log_bucket" {
-  value = module.log_storage
-}
-
 output "cloudtrail" {
   value = module.cloudtrail
 }

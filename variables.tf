@@ -68,9 +68,3 @@ variable "cloudtrail_enabled" {
   description = "Specifies whether to create the mutlri-region cloudtrail"
   default     = true
 }
-
-variable "log_expiration_days" {
-  description = "Number of days after which to expunge the objects from the log bucket"
-  type        = number
-  default     = 90
-}

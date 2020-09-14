@@ -26,7 +26,6 @@ introduction: |-
     * Account wide policy to disable public S3 buckets
     * Configure IAM account alias and pretty login URL
     * Account password policy
-    * Log bucket suitable for receiving logs from other AWS services such as S3, CloudFront
     * CloudTrail setup across all regions
 
 # How to use this project
